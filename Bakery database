@@ -1,0 +1,64 @@
+--Create a Bakery database
+
+/**Bakery :
+Croissant (20)
+Blueberry Muffins (15)
+Chocolate Chip Muffins (10)
+Plain Muffins (5)
+Plain Doughnuts (10)
+Glazed Doughnuts (5)
+Pumpkin Doughnuts (7)
+Blueberry Cupcakes (13)
+Pumpkin Bread (12)
+Coffee Cake (7)
+Cakes (12)
+Brownies (5)
+Chocolate Chip Cookies (10)
+Macadamia Nut Cookies (10)
+Oatmeal Cookies (20)
+Butterscotch Cookies (12)
+**/
+
+CREATE TABLE Bakery (id INTEGER PRIMARY KEY,name TEXT, quantity INTEGER, expiration REAL, price INTEGER);
+
+INSERT INTO Bakery VALUES (1,"Croissant",20,2.10,2.50);
+INSERT INTO Bakery VALUES (2,"Blueberry Muffins",15,2.12,3.00);
+INSERT INTO Bakery VALUES (3,"Chocolate Chip Muffins",10,2.12,3.00);
+INSERT INTO Bakery VALUES (4,"Plain Muffins",5,2.10,2.75);
+INSERT INTO Bakery VALUES (5,"Plain Doughnuts",10,2.05,2.00);
+INSERT INTO Bakery VALUES (6,"Glazed Doughnuts",5,2.05,2.10);
+INSERT INTO Bakery VALUES (7,"Pumpkin Doughnuts",7,2.05,2.25);
+INSERT INTO Bakery VALUES (8,"Blueberry Cupcakes",13,2.15,3.25);
+INSERT INTO Bakery VALUES (9,"Pumpkin Bread",12,2.20,1.50);
+INSERT INTO Bakery VALUES (10,"Coffee Cake",7,2.05,1.50);
+INSERT INTO Bakery VALUES (11,"Cakes",12,3.10,22.75);
+INSERT INTO Bakery VALUES (12,"Brownies",5,2.10,3.25);
+INSERT INTO Bakery VALUES (13,"Chocolate Chip Cookies",10,2.10,1.50);
+INSERT INTO Bakery VALUES (14,"Macadamia Nut Cookies",10,2.10,1.50);
+INSERT INTO Bakery VALUES (15,"Oatmeal Cookies",20,2.10,1.50);
+INSERT INTO Bakery VALUES (16,"Butterscotch Cookies",12,2.10,1.50);
+
+--display the database ordered by price
+SELECT*FROM Bakery 
+ORDER BY price; 
+
+--ordered by exiration
+SELECT*FROM Bakery ORDER BY expiration;
+
+--ordered by quantity
+SELECT*FROM Bakery ORDER BY quantity;
+
+--what is the total quantity of all items
+SELECT SUM(quantity) FROM Bakery;
+
+--what is the highest quantity that one item has
+SELECT MAX(quantity) FROM Bakery;
+
+--items that have more than a quantity of ten
+SELECT*FROM Bakery WHERE quantity > 10;
+
+--items that are lower than 10 in quantity
+SELECT*FROM Bakery WHERE quantity < 10;
+
+
+
