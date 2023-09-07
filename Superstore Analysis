@@ -1,0 +1,30 @@
+#1 Items ordered by price
+SELECT (price),(item_name)
+FROM superstore
+ORDER BY price
+
+#2 Items and their categories ordered by highest to lowest price
+SELECT (category),(price),(item_name)
+FROM superstore
+ORDER BY price desc
+
+#3 The stock quantity sum of electronics
+SELECT SUM(stock_quantity)
+FROM superstore
+WHERE category='Electronics'
+
+#4 The sum of prices for all electronics
+SELECT SUM(price)
+FROM superstore
+WHERE category='Electronics'
+
+#5 The average price of kitchen supplies
+SELECT AVG(price)
+FROM superstore
+WHERE category='Kitchen Supplies'
+
+#6 The average rating of all electronics organized by highest to lowest average rating
+SELECT (average_rating), 'Electronics'
+FROM superstore
+ORDER BY average_rating desc
+
